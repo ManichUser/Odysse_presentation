@@ -10,6 +10,7 @@ import { CTASection } from "./components/cta/CTASection";
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
 import { useNavigation } from "./hooks/useNavigation";
+import CarouselSection from "./components/common/CarouselSection";
 
 export default function Home() {
   const { menuOpen, toggleMenu, scrollToSection } = useNavigation();
@@ -25,6 +26,7 @@ export default function Home() {
       <ProblemsSection />
       <SolutionsSection />
       <FeaturesSection />
+      <CarouselSection/>
       <TestimonialsSection />
       <SecuritySection />
       <CTASection />
