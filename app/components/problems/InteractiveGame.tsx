@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, ChangeEvent, useEffect } from 'react';
 import { TextInput } from './TextInput';
 import { KeywordSelector } from './KeywordSelector';
 import { WordCloud } from './WordCloud';
@@ -13,21 +13,43 @@ import { InputMode } from '../../types';
 export const InteractiveGame: React.FC = () => {
   const [inputMode, setInputMode] = useState<InputMode>('text');
   const [textInput, setTextInput] = useState<string>('');
-  
+
   const { addWords, getSortedWords, isEmpty } = useWordCloud();
   const { selectedKeywords, toggleKeyword, clearSelection } = useKeywordSelection(3);
 
-  const handleTextSubmit = (): void => {
+  // Charger les mots stockés
+  useEffect(() => {
+    const fetchWords = async () => {
+      const res = await fetch('/api/words');
+      const data = await res.json();
+      if (data.words) addWords(data.words);
+    };
+    fetchWords();
+  }, []);
+
+  // Sauvegarder les mots dans le fichier
+  const saveWords = async (words: string[]) => {
+    await fetch('/api/words', {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ words })
+    });
+  };
+
+  const handleTextSubmit = async (): Promise<void> => {
     if (textInput.trim()) {
       const keywords = extractKeywords(textInput, STOP_WORDS);
       addWords(keywords);
+      await saveWords(keywords); // ← sauvegarde fichier
       setTextInput('');
     }
   };
 
-  const handleKeywordsSubmit = (): void => {
+  const handleKeywordsSubmit = async (): Promise<void> => {
     if (selectedKeywords.length > 0) {
-      addWords(selectedKeywords.map(k => k.toLowerCase()));
+      const words = selectedKeywords.map(k => k.toLowerCase());
+      addWords(words);
+      await saveWords(words); // ← sauvegarde fichier
       clearSelection();
     }
   };
@@ -38,6 +60,7 @@ export const InteractiveGame: React.FC = () => {
 
   return (
     <div className="max-w-4xl mx-auto bg-linear-to-br from-blue-50 to-teal-50 rounded-3xl p-8 shadow-xl">
+      
       {/* Mode Selector */}
       <div className="flex justify-center space-x-4 mb-8">
         <button
@@ -50,8 +73,9 @@ export const InteractiveGame: React.FC = () => {
             }
           `}
         >
-          Écrire 3 mots cle qui represente la masculinité positive
+          Écrire 3 mots cle qui representent la masculinité positive
         </button>
+
         <button
           onClick={() => setInputMode('keywords')}
           className={`
