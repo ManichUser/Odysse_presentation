@@ -50,6 +50,7 @@ export interface NavigationItem {
     description: string;
     imagePosition: 'left' | 'right';
     gradient: string;
+    url:string
   }
   
   export type ButtonVariant = 'primary' | 'secondary' | 'outline';

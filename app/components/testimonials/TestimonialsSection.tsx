@@ -24,17 +24,17 @@ const TestimonialCard: React.FC<Testimonial> = ({ quote, author, level }) => (
     const testimonials: Testimonial[] = [
       {
         quote: "J'ai appris à communiquer mes émotions sans violence. Ma famille me remercie chaque jour.",
-        author: "Jean-Pierre, 34 ans",
+        author: "L'homme, 34 ans",
         level: "Niveau odysse Muna"
       },
       {
         quote: "Les challenges m'ont aidé à devenir un meilleur père. Je suis plus présent et à l'écoute.",
-        author: "Amadou, 41 ans",
+        author: "Man237, 41 ans",
         level: "250 missions accomplies"
       },
       {
         quote: "Cette plateforme m'a donné un espace sûr pour parler de mes difficultés sans jugement.",
-        author: "Kevin, 28 ans",
+        author: "Mr P, 28 ans",
         level: "Champion du mois"
       }
     ];

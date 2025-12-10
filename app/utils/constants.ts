@@ -141,13 +141,16 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
       title: 'Divergences de définition de la masculinité positive',
       description: 'Chaque homme a sa propre vision de ce qu\'est une masculinité saine et positive. Cette diversité de perspectives peut créer de la confusion et limiter l\'engagement collectif. Notre plateforme permet d\'explorer ces définitions ensemble et de construire un consensus inclusif.',
       imagePosition: 'right',
-      gradient: 'bg-gradient-to-br from-amber-200 to-orange-300'
+      gradient: 'bg-gradient-to-br from-amber-200 to-orange-300',
+      url:'/pb-1.png'
+      
     },
     {
       title: 'Manque d\'éducation émotionnelle chez les hommes',
       description: 'Beaucoup d\'hommes n\'ont jamais appris à identifier, exprimer et gérer leurs émotions de manière saine. Cette carence éducative peut conduire à des comportements toxiques, de l\'isolement et des relations difficiles. Nous proposons des ressources et un espace sûr pour développer ces compétences essentielles.',
       imagePosition: 'left',
-      gradient: 'bg-gradient-to-br from-blue-200 to-indigo-300'
+      gradient: 'bg-gradient-to-br from-blue-200 to-indigo-300',
+      url:'/pb-2.png'
     }
   ];
   
