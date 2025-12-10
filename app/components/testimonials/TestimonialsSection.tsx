@@ -73,9 +73,9 @@ const TestimonialCard: React.FC<Testimonial> = ({ quote, author, level }) => (
           <div className="mt-12">
             <p className="text-center text-slate-600 mb-6">Partenaires & Soutiens</p>
             <div className="flex flex-wrap justify-center gap-8">
-              {[1, 2, 3, 4].map(i => (
+              {["/logo1.png", "/logo2.png", "logo3.png", "logo4.png"].map(i => (
                 <div key={i} className="w-32 h-32 bg-white rounded-2xl shadow flex items-center justify-center">
-                  <p className="text-slate-400">Logo {i}</p>
+                  <img src={i} alt="logo"/>
                 </div>
               ))}
             </div>
