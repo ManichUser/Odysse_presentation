@@ -130,7 +130,7 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
     },
     {
       title: 'Impact Social Positif',
-      description: 'En rejoignant Ngon\'a, vous contribuez à réduire les violences, améliorer les relations familiales et construire des communautés plus saines et solidaires.',
+      description: 'En rejoignant Odysse, vous contribuez à réduire les violences, améliorer les relations familiales et construire des communautés plus saines et solidaires.',
       gradient: 'bg-gradient-to-br from-amber-50 to-orange-50',
       iconName: 'TrendingUp'
     }

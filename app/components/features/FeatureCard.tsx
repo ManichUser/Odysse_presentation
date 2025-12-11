@@ -3,7 +3,7 @@ import React from 'react';
 import { Feature } from '../../types';
 
 export const FeatureCard: React.FC<Feature> = ({ icon, title, desc }) => (
-  <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+  <div className="bg-linear-to-br from-slate-50 to-blue-50 rounded-2xl p-6 hover:shadow-lg transition-all">
     <div className="flex items-start space-x-4">
       <span className="text-4xl">{icon}</span>
       <div>

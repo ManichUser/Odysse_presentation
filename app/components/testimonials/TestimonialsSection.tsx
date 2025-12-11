@@ -84,4 +84,3 @@ const TestimonialCard: React.FC<Testimonial> = ({ quote, author, level }) => (
       </section>
     );
   };
-  
